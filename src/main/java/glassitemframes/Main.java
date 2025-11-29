@@ -5,8 +5,8 @@ import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.TypedEntityData;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFrameItem;
 import net.minecraft.item.ItemGroups;
@@ -30,14 +30,14 @@ public class Main implements ModInitializer {
         nbt.putString("id", "item_frame");
 
         GLASS_ITEM_FRAME = Registry.register(Registries.ITEM, Identifier.of("glassitemframes", "glass_item_frame"),
-                new ItemFrameItem(EntityType.ITEM_FRAME, new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("glassitemframes", "glass_item_frame"))).component(DataComponentTypes.ENTITY_DATA, NbtComponent.of(nbt))));
+                new ItemFrameItem(EntityType.ITEM_FRAME, new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("glassitemframes", "glass_item_frame"))).component(DataComponentTypes.ENTITY_DATA, TypedEntityData.create(EntityType.ITEM_FRAME, nbt))));
 
         nbt.putString("id", "glow_item_frame");
 
         GLOW_GLASS_ITEM_FRAME = Registry.register(Registries.ITEM, Identifier.of("glassitemframes", "glow_glass_item_frame"),
                 new ItemFrameItem(EntityType.GLOW_ITEM_FRAME,
                         new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("glassitemframes", "glow_glass_item_frame"))).component(DataComponentTypes.ENTITY_DATA,
-                                NbtComponent.of(nbt))));
+                                TypedEntityData.create(EntityType.GLOW_ITEM_FRAME, nbt))));
     }
 
     @Override
