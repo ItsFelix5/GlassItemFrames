@@ -21,10 +21,5 @@
   },
   "mixins": [
     "glassitemframe.mixin.json"
-  ],
-  "depends": {
-    "fabricloader": "*",
-    "minecraft": "*",
-    "fabric": "*"
-  }
+  ]
 }

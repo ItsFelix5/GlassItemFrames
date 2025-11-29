@@ -29,7 +29,7 @@ public abstract class ItemFrameMixin extends AbstractDecorationEntity {
 
     @Inject(method = "canStayAttached", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getBlockState(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/BlockState;"), cancellable = true)
     private void keepFloating(CallbackInfoReturnable<Boolean> cir) {
-        if (isInvisible() && ((ServerWorld) getWorld()).getGameRules().getBoolean(Main.ALLOW_FLOATING_FRAMES) && !getHeldItemStack().isEmpty())
+        if (isInvisible() && ((ServerWorld) getEntityWorld()).getGameRules().getBoolean(Main.ALLOW_FLOATING_FRAMES) && !getHeldItemStack().isEmpty())
             cir.setReturnValue(true);
     }
 }

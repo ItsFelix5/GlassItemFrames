@@ -1,0 +1,5 @@
+{
+	"item.glassitemframes.glass_item_frame": "隐形物品展示框",
+	"item.glassitemframes.glow_glass_item_frame": "荧光隐形物品展示框",
+	"gamerule.allowFloatingFrames": "允许悬浮玻璃物品展示框"
+}
